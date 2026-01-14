@@ -42,54 +42,73 @@ pyautogui.press("enter")
 #Fazer uma pausa maior para o site carregar, levando em consideração a internet 
 time.sleep(3)
 
-# 3° Passo: Abrir a base de dados
+# 3° PaMOLO000192   Logitech    Mousesso: Abrir a base de dados
 #Instalar a biblioteca Pandas openpyxl (pip install pandas openpyxl)
 import pandas
 
 tabela = pandas.read_csv("produtos.csv")
 
-# 4° Passo: Cadastrar um produto
-pyautogui.click(x=707, y=432) #Vai clicar no campo do código
-pyautogui.write("MOLO000251")
-pyautogui.press("tab") #Para passar para o próximo campo
+for linha in tabela.index:
+    # 4° Passo: Cadastrar um produto
+    pyautogui.click(x=707, y=432) #Vai clicar no campo do código
+    codigo = str(tabela.loc[linha, "codigo"])
+    pyautogui.write(codigo)
+    pyautogui.press("tab") #Para passar para o próximo campo
 
-#Para cadastrar a marca
-pyautogui.write("Logitech")
-pyautogui.press("tab")
+    #Para cadastrar a marca
+    marca = str(tabela.loc[linha, "marca"])
+    pyautogui.write(marca)
+    pyautogui.press("tab")
 
-#Para cadastrar o tipo
-pyautogui.write("Mouse")
-pyautogui.press("tab")
+    #Para cadastrar o tipo
+    tipo = str(tabela.loc[linha, "tipo"])
+    pyautogui.write(tipo)
+    pyautogui.press("tab")
 
-#Pra cadastrar a categoria
-pyautogui.write("Logitech")
-pyautogui.press("tab")
+    #Pra cadastrar a categoria
+    categoria = str(tabela.loc[linha, "categoria"])
+    pyautogui.write(categoria)
+    pyautogui.press("tab")
 
-#para cadastrar o preço
-pyautogui.write("Mouse")
-pyautogui.press("tab")
+    #para cadastrar o preço
+    preco = str(tabela.loc[linha, "preco_unitario"])
+    pyautogui.write(preco)
+    pyautogui.press("tab")
 
-#Para cadastrar o custo
-pyautogui.write("Clonados")
-pyautogui.press("tab")
+    #Para cadastrar o custo
+    custo = str(tabela.loc[linha, "custo"])
+    pyautogui.write(custo)
+    pyautogui.press("tab")
 
-#Para cadastrar 
+    #Para escrever uma observação
+    obs = str(tabela.loc[linha, "obs"])
+    pyautogui.write(obs)
+    pyautogui.press("tab") #Usado para ir para o botaõa de enviar
 
+    pyautogui.press("enter") # Clica no botão enviar
 
+    #Depois do produto ser cadastrado tenho que voltar para o início da tela
+    pyautogui.scroll(5000)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# 5° Passo: Repetir o passo 4 até acabar a lista de produto
 
 
+ 
+
+
+
+
+
+
+
+
+
+
+
+CAHA000251
+
+
+
+
+
+MOLO000251  Logitech    Mouse   1   25.95
