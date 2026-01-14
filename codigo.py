@@ -84,7 +84,7 @@ for linha in tabela.index:
     obs = str(tabela.loc[linha, "obs"])
     if obs != "nan":
         pyautogui.write(obs)
-    pyautogui.press("tab") #Usado para ir para o botaõa de enviar
+    pyautogui.press("tab") #Usado para ir para o botão de enviar
 
     pyautogui.press("enter") # Clica no botão enviar
 
