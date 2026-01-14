@@ -1,5 +1,5 @@
 #Bobliotecas = pacotes de código
-# pip install pyautogui 
+#pip install pyautogui 
 # Passo a passo
 # 1° Passo: Entrar no sistema da empresa
 # 2° Passo: Fazerv login
@@ -9,7 +9,8 @@
 
 import pyautogui
 
-pyautogui.click
+pyautogui.
+
 
 
 
