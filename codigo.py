@@ -1,4 +1,4 @@
-#Bobliotecas = pacotes de código
+#Bibliotecas = pacotes de código
 #pip install pyautogui 
 # Passo a passo
 # 1° Passo: Entrar no sistema da empresa
@@ -29,7 +29,7 @@ pyautogui.press("enter")
 
 #Fazer uma pausa maior para o site carregar, levando em consideração a internet
 #Importe a biblioteca time
-time.sleep(2)
+time.sleep(3)
 
 # 2° Fazer login 
 pyautogui.click(x=549, y=606)
@@ -42,7 +42,7 @@ pyautogui.press("enter")
 #Fazer uma pausa maior para o site carregar, levando em consideração a internet 
 time.sleep(3)
 
-# 3° PaMOLO000192   Logitech    Mousesso: Abrir a base de dados
+# 3° Passo: Abrir a base de dados
 #Instalar a biblioteca Pandas openpyxl (pip install pandas openpyxl)
 import pandas
 
@@ -82,7 +82,8 @@ for linha in tabela.index:
 
     #Para escrever uma observação
     obs = str(tabela.loc[linha, "obs"])
-    pyautogui.write(obs)
+    if obs != "nan":
+        pyautogui.write(obs)
     pyautogui.press("tab") #Usado para ir para o botaõa de enviar
 
     pyautogui.press("enter") # Clica no botão enviar
@@ -93,22 +94,6 @@ for linha in tabela.index:
 # 5° Passo: Repetir o passo 4 até acabar a lista de produto
 
 
- 
+#NaN = Not a Number = Valor Vazio
 
 
-
-
-
-
-
-
-
-
-
-CAHA000251
-
-
-
-
-
-MOLO000251  Logitech    Mouse   1   25.95
